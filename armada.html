@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uralvagonzavod | Data &amp; Tabel Armada</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            steel: { 900: '#0b1210', 800: '#111c18', 700: '#182720', 600: '#22362d' },
+            brass: '#c9a227'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif; }
+    .brand-line { letter-spacing: .35em; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: #c9a227; transition: width .25s ease; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .data-table { border-collapse: collapse; width: 100%; }
+    .data-table th, .data-table td { border: 1px solid #22362d; padding: 10px 12px; text-align: left; vertical-align: top; font-size: 13px; }
+    .data-table thead th { background-color: #182720; color: #c9a227; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+    .data-table tbody tr:nth-child(even) { background-color: rgba(24, 39, 32, .55); }
+    .data-table tbody tr:hover { background-color: rgba(201, 162, 39, .10); }
+    .data-table td { color: #cbd5e1; }
+    .data-table td strong { color: #ffffff; }
+    .galeri-scroll { max-height: 340px; overflow-y: auto; }
+    .galeri-scroll::-webkit-scrollbar { width: 6px; }
+    .galeri-scroll::-webkit-scrollbar-thumb { background: #22362d; border-radius: 4px; }
+    .galeri-scroll::-webkit-scrollbar-thumb:hover { background: #c9a227; }
+    .drop-zone { transition: border-color .2s ease, background .2s ease; }
+    .drop-zone:hover { border-color: #c9a227; background: rgba(201, 162, 39, .06); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .foto-item { animation: fadeInUp .3s ease both; }
+  </style>
+</head>
+
+<body class="bg-steel-900 text-slate-200 antialiased">
+
+  <header class="sticky top-0 z-50 bg-steel-800/95 backdrop-blur border-b border-steel-600">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full border-2 border-brass grid place-items-center text-brass font-black">UVZ</div>
+        <div>
+          <p class="text-sm font-bold tracking-wider text-white leading-none">URALVAGONZAVOD</p>
+          <p class="text-[10px] brand-line text-brass mt-1">DEFENCE DIVISION</p>
+        </div>
+      </a>
+
+      <nav aria-label="Navigasi utama">
+        <ul class="flex items-center gap-6 text-sm font-medium">
+          <li><a href="index.html" class="nav-link text-slate-300 hover:text-white">Beranda</a></li>
+          <li><a href="index.html#tentang" class="nav-link text-slate-300 hover:text-white">Tentang</a></li>
+          <li><a href="index.html#armada" class="nav-link text-slate-300 hover:text-white">Armada</a></li>
+          <li><a href="armada.html" class="nav-link active text-white">Data &amp; Tabel</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="bg-steel-800 border-b border-steel-600">
+      <div class="max-w-7xl mx-auto px-5 py-14">
+        <p class="text-brass text-xs brand-line mb-3">HALAMAN 2 · DATA ARMADA</p>
+        <h1 class="text-3xl md:text-4xl font-black text-white">Tabel Spesifikasi &amp; Galeri Foto</h1>
+        <p class="mt-4 max-w-3xl text-slate-300 leading-relaxed">
+          Halaman ini menampilkan tabel perbandingan lima tank utama produksi Uralvagonzavod.
+          Di sisi kanan tersedia panel untuk mengunggah foto tank dan menyimpannya ke galeri.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="index.html" class="px-5 py-3 rounded border border-steel-600 text-white hover:border-brass hover:text-brass transition">← Kembali ke Beranda</a>
+          <a href="#tabel" class="px-5 py-3 rounded bg-brass text-steel-900 font-bold hover:bg-yellow-500 transition">Lihat Tabel</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="tabel" class="max-w-7xl mx-auto px-5 py-14">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <div class="lg:col-span-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Perbandingan Armada</h2>
+          <div class="w-16 h-1 bg-brass mt-4 mb-4"></div>
+          <p class="text-slate-400 mb-6 max-w-2xl">Lima kendaraan: T-72B3M, T-90M Proryv, T-14 Armata, BMPT Terminator, dan T-62M.</p>
+
+          <div class="overflow-x-auto rounded-xl border border-steel-600 bg-steel-800">
+            <table class="data-table">
+              <caption class="sr-only">Tabel perbandingan spesifikasi lima kendaraan lapis baja Uralvagonzavod</caption>
+              <thead>
+                <tr>
+                  <th>No</th><th>Nama Kendaraan</th><th>Jenis</th><th>Tahun</th>
+                  <th>Senjata Utama</th><th>Bobot</th><th>Awak</th><th>Kecepatan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td><strong>T-72B3M</strong></td><td>Tank Tempur Utama</td><td>2013</td><td>Meriam 125 mm 2A46M-5</td><td>46 ton</td><td>3 orang</td><td>60 km/jam</td></tr>
+                <tr><td>2</td><td><strong>T-90M Proryv</strong></td><td>Tank Tempur Utama</td><td>2019</td><td>Meriam 125 mm 2A46M-5</td><td>48 ton</td><td>3 orang</td><td>60 km/jam</td></tr>
+                <tr><td>3</td><td><strong>T-14 Armata</strong></td><td>Tank Tempur Utama</td><td>2020</td><td>Meriam 125 mm 2A82-1M</td><td>55 ton</td><td>3 orang</td><td>80 km/jam</td></tr>
+                <tr><td>4</td><td><strong>BMPT Terminator</strong></td><td>Kendaraan Pendukung Tempur</td><td>2018</td><td>2× meriam 30 mm 2A42 + ATGM</td><td>48 ton</td><td>5 orang</td><td>60 km/jam</td></tr>
+                <tr><td>5</td><td><strong>T-62M</strong></td><td>Tank Tempur Utama</td><td>1983</td><td>Meriam 115 mm U-5TS</td><td>40 ton</td><td>4 orang</td><td>50 km/jam</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-xs text-slate-500">Catatan: data pada tabel adalah data ringkas untuk demonstrasi project, bukan dokumen resmi perusahaan.</p>
+        </div>
+
+        <aside class="lg:col-span-4">
+          <div class="lg:sticky lg:top-24 space-y-5">
+
+            <div class="bg-steel-800 border border-steel-600 rounded-xl p-5">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white">Input Foto Tank</h3>
+                <span class="text-[10px] uppercase tracking-widest text-brass border border-brass/40 rounded px-2 py-1">Upload</span>
+              </div>
+
+              <input type="file" id="fotoInput" accept="image/*" class="hidden">
+              <label for="fotoInput" class="drop-zone flex flex-col items-center justify-center w-full h-28 border-2 border-dashed border-steel-600 rounded-lg cursor-pointer text-center px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-brass" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5M16.5 12L12 7.5 7.5 12M12 7.5V21"/>
+                </svg>
+                <span class="text-sm text-slate-300 mt-2 font-medium">Klik untuk pilih foto</span>
+                <span class="text-[11px] text-slate-500 mt-1">JPG, PNG, WEBP · maks 800 KB</span>
+              </label>
+
+              <div id="previewWrap" class="hidden mt-4 relative">
+                <img id="preview" alt="Preview foto tank" class="w-full h-36 object-cover rounded-lg border border-steel-600">
+                <button type="button" id="btnHapusPreview" aria-label="Batalkan foto"
+                  class="absolute top-2 right-2 w-7 h-7 rounded-full bg-red-600/90 text-white text-sm font-bold hover:bg-red-500 transition">×</button>
+              </div>
+
+              <div class="mt-4">
+                <label for="fotoNama" class="block text-[11px] uppercase tracking-widest text-slate-400 mb-1">Keterangan</label>
+                <input type="text" id="fotoNama" maxlength="40" placeholder="Contoh: T-90M saat uji coba"
+                  class="w-full bg-steel-700 border border-steel-600 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brass transition">
+              </div>
+
+              <button type="button" id="btnTambah"
+                class="mt-4 w-full px-4 py-3 rounded-lg bg-brass text-steel-900 font-bold hover:bg-yellow-500 transition">+ Tambah ke Galeri</button>
+            </div>
+
+            <div class="bg-steel-800 border border-steel-600 rounded-xl p-5">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white">Galeri Foto</h3>
+                <span id="galeriCount" class="text-xs bg-brass/20 text-brass border border-brass/40 rounded-full px-2 py-0.5 font-semibold">0</span>
+              </div>
+              <p id="galeriEmpty" class="text-sm text-slate-500 text-center py-6 border border-dashed border-steel-600 rounded-lg">
+                Belum ada foto.<br>Unggah foto tank pertama Anda di atas.
+              </p>
+              <div id="galeri" class="galeri-scroll grid grid-cols-2 gap-3"></div>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="bg-steel-800 border-y border-steel-600">
+      <div class="max-w-6xl mx-auto px-5 py-14">
+        <h2 class="text-2xl font-bold text-white mb-6">Ringkasan Cepat</h2>
+        <div class="grid sm:grid-cols-3 gap-5">
+          <div class="bg-steel-700 border border-steel-600 rounded-lg p-5">
+            <p class="text-xs uppercase tracking-wider text-brass mb-2">Jumlah Unit Ditampilkan</p>
+            <p class="text-3xl font-black text-white">5</p>
+            <p class="text-sm text-slate-400 mt-1">Tank dan kendaraan tempur</p>
+          </div>
+          <div class="bg-steel-700 border border-steel-600 rounded-lg p-5">
+            <p class="text-xs uppercase tracking-wider text-brass mb-2">Rentang Tahun</p>
+            <p class="text-3xl font-black text-white">1983–2020</p>
+            <p class="text-sm text-slate-400 mt-1">Dari T-62M hingga T-14 Armata</p>
+          </div>
+          <div class="bg-steel-700 border border-steel-600 rounded-lg p-5">
+            <p class="text-xs uppercase tracking-wider text-brass mb-2">Bobot Terberat</p>
+            <p class="text-3xl font-black text-white">55 ton</p>
+            <p class="text-sm text-slate-400 mt-1">T-14 Armata</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 py-14">
+      <div class="bg-brass/10 border border-brass/40 rounded-xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+        <div>
+          <h2 class="text-xl font-bold text-white">Kembali ke halaman profil</h2>
+          <p class="text-sm text-slate-300 mt-2">Halaman utama berisi profil perusahaan dan lima kartu tank unggulan.</p>
+        </div>
+        <a href="index.html" class="inline-block text-center px-6 py-3 rounded bg-brass text-steel-900 font-bold hover:bg-yellow-500 transition">Buka Beranda →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-steel-800 border-t border-steel-600">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-400">© 2026 Uralvagonzavod — Profil Perusahaan (Fiktif untuk UTS Pemrograman Web) · Disusun oleh <strong class="text-brass">Ichsan</strong>.</p>
+      <nav class="flex gap-5 text-sm">
+        <a href="index.html" class="text-slate-400 hover:text-brass transition">Beranda</a>
+        <a href="armada.html" class="text-slate-400 hover:text-brass transition">Data &amp; Tabel</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'uvz_galeri_v1';
+      const MAX_SIZE = 800 * 1024;
+      const CLOUD_NAME = 'ichsan';
+      const UPLOAD_PRESET = 'ichsan';
+
+      const fotoInput   = document.getElementById('fotoInput');
+      const previewWrap = document.getElementById('previewWrap');
+      const preview     = document.getElementById('preview');
+      const btnHapus    = document.getElementById('btnHapusPreview');
+      const fotoNama    = document.getElementById('fotoNama');
+      const btnTambah   = document.getElementById('btnTambah');
+      const galeriEl    = document.getElementById('galeri');
+      const galeriCount = document.getElementById('galeriCount');
+      const galeriEmpty = document.getElementById('galeriEmpty');
+
+      let currentImage = null;
+      let galeriData = [];
+
+      function toast(msg, type) {
+        const el = document.createElement('div');
+        el.className = 'fixed bottom-6 right-6 z-[60] px-5 py-3 rounded-lg text-sm font-semibold shadow-xl transition ' +
+          (type === 'error' ? 'bg-red-600 text-white' : 'bg-brass text-steel-900');
+        el.textContent = msg;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 2600);
+      }
+
+      function esc(s) {
+        return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      }
+
+      try {
+        galeriData = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        if (!Array.isArray(galeriData)) galeriData = [];
+      } catch (e) { galeriData = []; }
+
+      function save() {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(galeriData)); }
+        catch (e) { toast('Penyimpanan browser penuh. Foto hanya tersimpan di sesi ini.', 'error'); }
+      }
+
+      function renderGaleri() {
+        galeriEl.innerHTML = '';
+        galeriCount.textContent = galeriData.length;
+        galeriEmpty.style.display = galeriData.length ? 'none' : 'block';
+
+        galeriData.forEach((item, index) => {
+          const card = document.createElement('div');
+          card.className = 'foto-item relative bg-steel-700 rounded-lg overflow-hidden border border-steel-600';
+          card.innerHTML = `
+            <img src="${item.src}" alt="${esc(item.nama)}" class="w-full h-24 object-cover">
+            <div class="p-2">
+              <p class="text-[11px] text-white font-semibold truncate" title="${esc(item.nama)}">${esc(item.nama)}</p>
+              <button data-index="${index}" class="hapus-foto text-[10px] text-red-400 hover:text-red-300 mt-1">Hapus</button>
+            </div>
+          `;
+          card.querySelector('.hapus-foto').addEventListener('click', () => {
+            galeriData.splice(index, 1);
+            save();
+            renderGaleri();
+            toast('Foto dihapus.');
+          });
+          galeriEl.appendChild(card);
+        });
+      }
+
+      fotoInput.addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        if (!file.type.startsWith('image/')) { toast('File harus berupa gambar (JPG/PNG/WEBP).', 'error'); fotoInput.value = ''; return; }
+        if (file.size > MAX_SIZE) { toast('Ukuran foto maksimal 800 KB.', 'error'); fotoInput.value = ''; return; }
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('upload_preset', UPLOAD_PRESET);
+
+        previewWrap.classList.remove('hidden');
+        preview.src = 'https://placehold.co/600x400/182720/c9a227?text=Mengunggah...';
+        currentImage = null;
+
+        fetch('https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/image/upload', { method: 'POST', body: formData })
+          .then(res => res.json())
+          .then(data => {
+            if (!data.secure_url) throw new Error('Upload gagal');
+            currentImage = data.secure_url;
+            preview.src = data.secure_url;
+            toast('Foto berhasil diunggah ke Cloudinary.');
+          })
+          .catch(() => {
+            previewWrap.classList.add('hidden');
+            preview.src = '';
+            toast('Upload ke Cloudinary gagal. Periksa Cloud Name/preset.', 'error');
+          })
+          .finally(() => { fotoInput.value = ''; });
+      });
+
+      btnHapus.addEventListener('click', () => {
+        currentImage = null;
+        fotoInput.value = '';
+        preview.src = '';
+        previewWrap.classList.add('hidden');
+      });
+
+      btnTambah.addEventListener('click', () => {
+        if (!currentImage) { toast('Unggah foto terlebih dahulu.', 'error'); return; }
+        const nama = fotoNama.value.trim() || 'Tanpa keterangan';
+        galeriData.unshift({ src: currentImage, nama });
+        save();
+        renderGaleri();
+        toast('Foto ditambahkan ke galeri.');
+
+        currentImage = null;
+        fotoInput.value = '';
+        fotoNama.value = '';
+        preview.src = '';
+        previewWrap.classList.add('hidden');
+      });
+
+      renderGaleri();
+    })();
+  </script>
+
+</body>
+</html>

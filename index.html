@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uralvagonzavod | Beranda</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            steel: { 900: '#0b1210', 800: '#111c18', 700: '#182720', 600: '#22362d' },
+            brass: '#c9a227'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif; }
+    .brand-line { letter-spacing: .35em; }
+    .tank-card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .tank-card:hover { transform: translateY(-8px); border-color: #c9a227; box-shadow: 0 25px 45px -25px rgba(201,162,39,.55); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: #c9a227; transition: width .25s ease; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .hero-bg { background-image: linear-gradient(rgba(11,18,16,.88), rgba(11,18,16,.96)), repeating-linear-gradient(90deg, #182720 0 2px, transparent 2px 70px); }
+    .profile-img { transition: opacity .25s ease; }
+    .profile-img.loading { opacity: .55; }
+  </style>
+</head>
+
+<body class="bg-steel-900 text-slate-200 antialiased">
+
+  <header class="sticky top-0 z-50 bg-steel-800/95 backdrop-blur border-b border-steel-600">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full border-2 border-brass grid place-items-center text-brass font-black">UVZ</div>
+        <div>
+          <p class="text-sm font-bold tracking-wider text-white leading-none">URALVAGONZAVOD</p>
+          <p class="text-[10px] brand-line text-brass mt-1">DEFENCE DIVISION</p>
+        </div>
+      </a>
+
+      <nav aria-label="Navigasi utama">
+        <ul class="flex items-center gap-6 text-sm font-medium">
+          <li><a href="index.html" class="nav-link active text-white">Beranda</a></li>
+          <li><a href="#tentang" class="nav-link text-slate-300 hover:text-white">Tentang</a></li>
+          <li><a href="#armada" class="nav-link text-slate-300 hover:text-white">Armada</a></li>
+          <li><a href="armada.html" class="px-4 py-2 rounded bg-brass text-steel-900 font-bold hover:bg-yellow-500 transition">Data &amp; Tabel</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero-bg border-b border-steel-600">
+      <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+        <p class="text-brass text-xs brand-line mb-4">EST. 1936 · NIZHNY TAGIL, RUSIA</p>
+        <h1 class="text-3xl md:text-5xl font-black text-white leading-tight max-w-3xl">
+          Produsen Kendaraan Lapis Baja Terbesar di Dunia
+        </h1>
+        <p class="mt-5 max-w-2xl text-slate-300 leading-relaxed">
+          Uralvagonzavod adalah perusahaan industri pertahanan yang memproduksi tank, kendaraan tempur
+          infanteri, serta kendaraan pendukung lapis baja. Lebih dari 100.000 unit kendaraan lapis baja
+          telah diproduksi sejak berdirinya pabrik di Ural.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#armada" class="px-6 py-3 rounded bg-brass text-steel-900 font-bold hover:bg-yellow-500 transition">Lihat 5 Tank Unggulan</a>
+          <a href="armada.html" class="px-6 py-3 rounded border border-steel-600 text-white hover:border-brass hover:text-brass transition">Tabel Spesifikasi</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang" class="max-w-6xl mx-auto px-5 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Tentang Perusahaan</h2>
+          <div class="w-16 h-1 bg-brass mt-4 mb-6"></div>
+          <p class="text-slate-300 leading-relaxed mb-4">
+            <strong class="text-white">Uralvagonzavod</strong> (UVZ) berdiri pada tahun 1936 sebagai pabrik
+            pembuatan gerbong kereta di Nizhny Tagil. Pada masa Perang Dunia II, pabrik ini beralih
+            memproduksi tank dan menjadi salah satu tulang punggung industri lapis baja.
+          </p>
+          <p class="text-slate-300 leading-relaxed mb-6">
+            Kini UVZ menaungi beberapa fasilitas produksi dan menjadi produsen tank kelas utama dunia,
+            dengan lini produk yang mencakup T-72, T-90, hingga platform generasi baru T-14 Armata.
+          </p>
+          <dl class="grid grid-cols-3 gap-4 text-center">
+            <div class="bg-steel-800 border border-steel-600 rounded-lg py-4">
+              <dt class="text-[11px] uppercase tracking-wider text-slate-400">Berdiri</dt>
+              <dd class="text-xl font-bold text-brass mt-1">1936</dd>
+            </div>
+            <div class="bg-steel-800 border border-steel-600 rounded-lg py-4">
+              <dt class="text-[11px] uppercase tracking-wider text-slate-400">Unit Dibuat</dt>
+              <dd class="text-xl font-bold text-brass mt-1">100K+</dd>
+            </div>
+            <div class="bg-steel-800 border border-steel-600 rounded-lg py-4">
+              <dt class="text-[11px] uppercase tracking-wider text-slate-400">Karyawan</dt>
+              <dd class="text-xl font-bold text-brass mt-1">30K+</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="relative border border-steel-600 rounded-xl overflow-hidden bg-steel-800">
+          <img id="profileImage" src="pabrik.jpg" alt="Fasilitas produksi Uralvagonzavod di Nizhny Tagil"
+               class="profile-img w-full h-72 object-cover"
+               onerror="this.onerror=null;this.src='https://placehold.co/900x600/182720/c9a227?text=Fasilitas+Produksi+UVZ'">
+          <div class="absolute top-3 right-3 flex gap-2 z-10">
+            <input type="file" id="profileInput" accept="image/*" class="hidden">
+            <label for="profileInput" class="cursor-pointer inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-brass text-steel-900 text-xs font-bold hover:bg-yellow-500 transition shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5M16.5 12L12 7.5 7.5 12M12 7.5V21"/>
+              </svg>
+              Ganti Foto
+            </label>
+            <button type="button" id="resetProfile" class="hidden px-3 py-2 rounded-lg bg-red-600/90 text-white text-xs font-bold hover:bg-red-500 transition shadow-lg">Reset</button>
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-slate-400 flex items-center justify-between gap-2">
+            <span id="profileCaption">Fasilitas perakitan utama Uralvagonzavod, Nizhny Tagil.</span>
+            <span id="profileBadge" class="hidden text-[10px] uppercase tracking-widest text-brass border border-brass/40 rounded px-2 py-0.5">Foto Kustom</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="armada" class="bg-steel-800 border-y border-steel-600">
+      <div class="max-w-6xl mx-auto px-5 py-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Armada Produk Unggulan</h2>
+        <div class="w-16 h-1 bg-brass mt-4 mb-3"></div>
+        <p class="text-slate-400 mb-10 max-w-2xl">Lima kendaraan lapis baja utama hasil produksi Uralvagonzavod beserta data singkatnya.</p>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="tank-card bg-steel-700 border border-steel-600 rounded-xl overflow-hidden">
+            <img src="t72b3m.jpg" alt="Tank T-72B3M" class="w-full h-44 object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x450/182720/c9a227?text=T-72B3M'">
+            <div class="p-5">
+              <span class="text-[10px] uppercase tracking-widest text-brass">MBT · 2013</span>
+              <h3 class="text-lg font-bold text-white mt-1">T-72B3M</h3>
+              <p class="text-sm text-slate-400 mt-2 leading-relaxed">Modernisasi menyeluruh dari T-72 dengan sistem penembakan digital dan proteksi reaktif.</p>
+              <ul class="mt-4 space-y-1 text-sm text-slate-300">
+                <li>• Meriam 125 mm 2A46M-5</li>
+                <li>• Bobot 46 ton · Awak 3 orang</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tank-card bg-steel-700 border border-steel-600 rounded-xl overflow-hidden">
+            <img src="t90m.jpg" alt="Tank T-90M Proryv" class="w-full h-44 object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x450/182720/c9a227?text=T-90M+Proryv'">
+            <div class="p-5">
+              <span class="text-[10px] uppercase tracking-widest text-brass">MBT · 2019</span>
+              <h3 class="text-lg font-bold text-white mt-1">T-90M Proryv</h3>
+              <p class="text-sm text-slate-400 mt-2 leading-relaxed">Tank tempur utama dengan menara baru, sistem kendali tembakan Kalina, dan lapisan relikt.</p>
+              <ul class="mt-4 space-y-1 text-sm text-slate-300">
+                <li>• Meriam 125 mm 2A46M-5</li>
+                <li>• Bobot 48 ton · Awak 3 orang</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tank-card bg-steel-700 border border-steel-600 rounded-xl overflow-hidden">
+            <img src="t14.jpg" alt="Tank T-14 Armata" class="w-full h-44 object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x450/182720/c9a227?text=T-14+Armata'">
+            <div class="p-5">
+              <span class="text-[10px] uppercase tracking-widest text-brass">MBT · 2020</span>
+              <h3 class="text-lg font-bold text-white mt-1">T-14 Armata</h3>
+              <p class="text-sm text-slate-400 mt-2 leading-relaxed">Platform generasi baru dengan menara tak berawak dan kapsul awak terlindungi.</p>
+              <ul class="mt-4 space-y-1 text-sm text-slate-300">
+                <li>• Meriam 125 mm 2A82-1M</li>
+                <li>• Bobot 55 ton · Awak 3 orang</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tank-card bg-steel-700 border border-steel-600 rounded-xl overflow-hidden">
+            <img src="bmpt.jpg" alt="BMPT Terminator" class="w-full h-44 object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x450/182720/c9a227?text=BMPT+Terminator'">
+            <div class="p-5">
+              <span class="text-[10px] uppercase tracking-widest text-brass">Support · 2018</span>
+              <h3 class="text-lg font-bold text-white mt-1">BMPT Terminator</h3>
+              <p class="text-sm text-slate-400 mt-2 leading-relaxed">Kendaraan pendukung tempur yang dirancang melindungi tank di medan perkotaan.</p>
+              <ul class="mt-4 space-y-1 text-sm text-slate-300">
+                <li>• 2× meriam 30 mm 2A42 + ATGM</li>
+                <li>• Bobot 48 ton · Awak 5 orang</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tank-card bg-steel-700 border border-steel-600 rounded-xl overflow-hidden">
+            <img src="t62m.jpg" alt="Tank T-62M" class="w-full h-44 object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x450/182720/c9a227?text=T-62M'">
+            <div class="p-5">
+              <span class="text-[10px] uppercase tracking-widest text-brass">MBT · 1983</span>
+              <h3 class="text-lg font-bold text-white mt-1">T-62M</h3>
+              <p class="text-sm text-slate-400 mt-2 leading-relaxed">Versi modernisasi dari T-62 dengan penambahan pelindung dan sistem kendali tembakan.</p>
+              <ul class="mt-4 space-y-1 text-sm text-slate-300">
+                <li>• Meriam 115 mm U-5TS</li>
+                <li>• Bobot 40 ton · Awak 4 orang</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="bg-brass/10 border border-brass/40 rounded-xl p-6 flex flex-col justify-center">
+            <h3 class="text-lg font-bold text-white">Butuh data lengkap?</h3>
+            <p class="text-sm text-slate-300 mt-2 mb-5">Lihat tabel perbandingan spesifikasi dan estimasi biaya program modernisasi.</p>
+            <a href="armada.html" class="inline-block text-center px-5 py-3 rounded bg-brass text-steel-900 font-bold hover:bg-yellow-500 transition">Buka Halaman Data →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" class="max-w-6xl mx-auto px-5 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Hubungi Kami</h2>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <div class="bg-steel-800 border border-steel-600 rounded-lg p-5">
+          <p class="text-xs uppercase tracking-wider text-brass mb-2">Alamat</p>
+          <p class="text-sm text-slate-300">Vostochnoye Shosse 28,<br>Nizhny Tagil, Sverdlovsk Oblast, Rusia</p>
+        </div>
+        <div class="bg-steel-800 border border-steel-600 rounded-lg p-5">
+          <p class="text-xs uppercase tracking-wider text-brass mb-2">Telepon</p>
+          <p class="text-sm text-slate-300">+7 (3435) 34-40-00</p>
+        </div>
+        <div class="bg-steel-800 border border-steel-600 rounded-lg p-5">
+          <p class="text-xs uppercase tracking-wider text-brass mb-2">Surel</p>
+          <p class="text-sm text-slate-300">info@uvz.example</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-steel-800 border-t border-steel-600">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-400">© 2026 Uralvagonzavod — Profil Perusahaan (Fiktif untuk UTS Pemrograman Web) · Disusun oleh <strong class="text-brass">Ichsan</strong>.</p>
+      <nav class="flex gap-5 text-sm">
+        <a href="index.html" class="text-slate-400 hover:text-brass transition">Beranda</a>
+        <a href="armada.html" class="text-slate-400 hover:text-brass transition">Data &amp; Tabel</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'uvz_profile_img_v1';
+      const MAX_SIZE = 800 * 1024;
+      const CLOUD_NAME = 'ichsan';
+      const UPLOAD_PRESET = 'ichsan';
+
+      const img      = document.getElementById('profileImage');
+      const input    = document.getElementById('profileInput');
+      const resetBtn = document.getElementById('resetProfile');
+      const badge    = document.getElementById('profileBadge');
+      const DEFAULT_SRC = 'https://placehold.co/900x600/182720/c9a227?text=Fasilitas+Produksi+UVZ';
+
+      function toast(msg, type) {
+        const el = document.createElement('div');
+        el.className = 'fixed bottom-6 right-6 z-[60] px-5 py-3 rounded-lg text-sm font-semibold shadow-xl transition ' +
+          (type === 'error' ? 'bg-red-600 text-white' : 'bg-brass text-steel-900');
+        el.textContent = msg;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 2600);
+      }
+
+      function applyImage(src, isCustom) {
+        img.classList.add('loading');
+        const loader = new Image();
+        loader.onload = () => {
+          img.src = src;
+          img.classList.remove('loading');
+          if (isCustom) {
+            badge.classList.remove('hidden');
+            resetBtn.classList.remove('hidden');
+          } else {
+            badge.classList.add('hidden');
+            resetBtn.classList.add('hidden');
+          }
+        };
+        loader.onerror = () => {
+          img.classList.remove('loading');
+          toast('Gambar tidak dapat dimuat.', 'error');
+        };
+        loader.src = src;
+      }
+
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) applyImage(saved, true);
+      } catch (e) {}
+
+      input.addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        if (!file.type.startsWith('image/')) { toast('File harus berupa gambar (JPG/PNG/WEBP).', 'error'); input.value = ''; return; }
+        if (file.size > MAX_SIZE) { toast('Ukuran foto maksimal 800 KB.', 'error'); input.value = ''; return; }
+
+        img.classList.add('loading');
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('upload_preset', UPLOAD_PRESET);
+
+        fetch('https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/image/upload', { method: 'POST', body: formData })
+          .then(res => res.json())
+          .then(data => {
+            if (!data.secure_url) throw new Error('Upload gagal');
+            applyImage(data.secure_url, true);
+            try { localStorage.setItem(STORAGE_KEY, data.secure_url); } catch (err) { toast('Gagal menyimpan referensi foto.', 'error'); }
+            toast('Foto profil berhasil diperbarui.');
+          })
+          .catch(() => toast('Upload ke Cloudinary gagal. Periksa Cloud Name/preset.', 'error'))
+          .finally(() => { img.classList.remove('loading'); input.value = ''; });
+      });
+
+      resetBtn.addEventListener('click', () => {
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+        applyImage(DEFAULT_SRC, false);
+        input.value = '';
+        toast('Foto profil dikembalikan ke default.');
+      });
+    })();
+  </script>
+
+</body>
+</html>
